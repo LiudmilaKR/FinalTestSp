@@ -1,8 +1,6 @@
 package animals.model;
 
-import java.io.Serializable;
-
-public abstract class HumanFriends implements Serializable {
+public abstract class HumanFriends {
     private int id;
     private String name;
     private int yearBirthday;

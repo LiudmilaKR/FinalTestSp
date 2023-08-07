@@ -1,7 +1,6 @@
 package animals.view.menuPoints;
 
 import animals.view.View;
-import java.util.ArrayList;
 
 public class PrintAll implements MenuPoint {
 

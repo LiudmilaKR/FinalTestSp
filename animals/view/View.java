@@ -1,9 +1,5 @@
 package animals.view;
 
-import java.util.ArrayList;
-
-import animals.model.HumanFriends;
-
 public interface View {
     void startConsole();
     void endtConsole();

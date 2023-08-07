@@ -1,7 +1,7 @@
 package animals.presenter;
 
 import animals.model.Service;
-import animals.view.ConsoleView;
+// import animals.view.ConsoleView;
 import animals.view.View;
 
 public class Presenter {
@@ -10,8 +10,8 @@ public class Presenter {
     /**
      * контруктор Presenter
      */
-    public Presenter(String path) {
-        view = new ConsoleView();
+    public Presenter(View view, String path) {
+        this.view = view;
         service = new Service(path);
     }
     /**
@@ -19,7 +19,8 @@ public class Presenter {
      */
     public void start(){
         view.startConsole();
-        view.launchMenu();
+        service.loadFromFile();
+        // view.launchMenu();
         view.endtConsole();
     }
 }

@@ -1,26 +1,22 @@
-package animals.view;
+package pets.view;
 
 import java.util.Scanner;
 
-import animals.model.HumanFriends;
-import animals.model.pets.Dogs;
-
 public class ConsoleView implements View {
-    Scanner scan;
-    Menu menu;
+    private Scanner scan;
+    private Menu menu;
     private boolean work;
     /**
      * конструктор ConsoleView
      */
     public ConsoleView() {
-        scan = new Scanner(System.in, "Cp866");
+        scan = new Scanner(System.in);
         menu = new Menu();
         work = false;
     }
     /**
      * метод оповещения начала работы программы
      */
-    @Override
     public void startConsole() {
         System.out.println();
         System.out.println("Начало работы программы.");
@@ -28,12 +24,10 @@ public class ConsoleView implements View {
     /**
      * метод оповещения завершения работы программы
      */
-    @Override
     public void endtConsole() {
         System.out.println();
         System.out.println("Завершение работы программы.");
     }
-    @Override
     public void launchMenu() {
         work = true;
         int point = 0;
@@ -52,18 +46,13 @@ public class ConsoleView implements View {
             }
         }
     }
-    // public void test() {
-    //     System.out.println("test");
-    // }
-    @Override
-    public void printAllFriends() {
-        HumanFriends pet2 = new Dogs(2, "Турмалин", 2018);
-        System.out.println(pet2);
-        System.out.println(pet2.commands());
-    }
     private void exit(){
-        System.out.println("Завершение работы.");
+        System.out.println("Выходим...");
         // scan.close();
         // work = false;
+    }
+    @Override
+    public void printAnimList() {
+
     }
 }
