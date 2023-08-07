@@ -10,7 +10,7 @@ public interface View {
     void launchMenu ();
     // void test();
     void printAllFriends();
-    // void addAnimal();
+    void addHumFriend();
     // void printCommandAnimal(HumanFriends hf);
     // void trainAnimalNewCommand (HumanFriends hf);
 }

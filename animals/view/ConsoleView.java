@@ -62,6 +62,12 @@ public class ConsoleView implements View {
         System.out.println(pet2);
         System.out.println(pet2.commands());
     }
+    @Override
+    public void addHumFriend() {
+        System.out.println("Введите имя нового друга человека => ");
+        String name = scan.nextLine();
+        HumanFriends pet = new Dogs(1, name, 2020);
+    }
     private void exit(){
         System.out.println("Завершение работы.");
         // scan.close();
