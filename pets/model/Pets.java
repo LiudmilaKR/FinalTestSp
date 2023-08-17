@@ -14,4 +14,9 @@ public class Pets {
     public void add(Animal animal) {
         if (!petList.contains(animal)) petList.add(animal);
     }
+
+    @Override
+    public String toString() {
+        return "Pets\n" + petList;
+    }
 }

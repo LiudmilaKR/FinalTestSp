@@ -4,4 +4,5 @@ import pets.view.View;
 
 public interface MenuPoint {
     void execute(View console);
+    // void execute (Pres)
 }

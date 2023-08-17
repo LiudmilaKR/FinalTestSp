@@ -16,11 +16,16 @@ public class Animal {
         ageAnim = 2023 - yearBirthdayAnim;
     }
 
+    public String toDo() {
+        if (typeAnim == TypeAnim.Dogs) return "сидеть, лежать, голос!";
+        else return null;
+    }
+
     @Override
     public String toString() {
         if (typeAnim == TypeAnim.Dogs) 
         return "Домашнее животное собака по кличке " + nameAnim + " [id=" + idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim
-                + ", ageAnim=" + ageAnim + "]";
+                + ", ageAnim=" + ageAnim + "]\n\tвыполняет команды: " + toDo();
         else return null;
     }
 
