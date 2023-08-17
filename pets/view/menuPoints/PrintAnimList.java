@@ -1,12 +1,12 @@
 package pets.view.menuPoints;
 
-import pets.view.View;
+import pets.presenter.Presenter;
 
 public class PrintAnimList implements MenuPoint {
 
     @Override
-    public void execute(View console) {
-        console.printAnimList();
+    public void execute(Presenter presenter) {
+        presenter.printAnimList();
     }
     @Override
     public String toString() {

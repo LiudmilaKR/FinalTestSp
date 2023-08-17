@@ -3,6 +3,7 @@ package pets.view;
 import java.util.ArrayList;
 import java.util.List;
 
+import pets.presenter.Presenter;
 import pets.view.menuPoints.AddAnimal;
 import pets.view.menuPoints.MenuPoint;
 import pets.view.menuPoints.PrintAnimList;
@@ -22,10 +23,10 @@ public class Menu {
     public int getMenuSize() {
         return menuList.size();
     }
-    public void perform(int num, View console) {
+    public void perform(int num, Presenter presenter) {
         MenuPoint menu = menuList.get(num - 1);
-        System.out.println(menu);
-        // menu.execute(console);
+        // System.out.println(menu);
+        menu.execute(presenter);
     }
     @Override
     public String toString() {

@@ -2,8 +2,10 @@ package pets.view;
 
 import java.util.Scanner;
 
-import animals.model.HumanFriends;
-import animals.model.pets.Dogs;
+import pets.model.TypeAnim;
+
+// import animals.model.HumanFriends;
+// import animals.model.pets.Dogs;
 
 public class ConsoleView implements View {
     private Scanner scan;
@@ -60,8 +62,31 @@ public class ConsoleView implements View {
     }
     @Override
     public void printAnimList() {
-        HumanFriends pet2 = new Dogs(2, "Турмалин", 2018);
-        System.out.println(pet2);
-        System.out.println(pet2.commands());
+        System.out.println("Печатаем лист животных");
+        System.out.println();
+    }
+    @Override
+    public void addAnimal(String name) {
+        System.out.printf("Животное по кличке %s добавлено.", name);
+        System.out.println();
+    }
+    @Override
+    public String getNameAnimal() {
+        System.out.println("Введите имя нового животного => ");
+        return scan.nextLine();
+    }
+    @Override
+    public int getYearBirthAnimal() {
+        System.out.println("Введите год рождения нового животного => ");
+        return scan.nextInt();
+    }
+    @Override
+    public TypeAnim getTypeAnim() {
+        System.out.println("Введите 1, если новое животное - собака, 2 - кошка, 3 - хомячок => ");
+        int flag = scan.nextInt();
+        if (flag == 1) return TypeAnim.Dogs;
+        else if (flag == 2) return TypeAnim.Cats;
+            else if (flag == 3) return TypeAnim.Hamsters;
+                else return null;
     }
 }

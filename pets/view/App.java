@@ -7,13 +7,13 @@ import pets.presenter.Presenter;
 
 public class App {
     View veiw;
-    Service service;
+    // Service service;
     Presenter presenter;
 
     public App() {
         veiw = new ConsoleView();
-        service = new Service("data.db");
-        presenter = new Presenter(veiw, service);
+        // service = new Service("data.db");
+        presenter = new Presenter(veiw, "data.db");
     }
 
     public void buttonClick() {
@@ -38,7 +38,7 @@ public class App {
                         work = false;
                     }
                     // else presenter.perfom(menu, point); 
-                    else menu.perform(point, veiw);
+                    else menu.perform(point, presenter);
                 }
             }
         }
