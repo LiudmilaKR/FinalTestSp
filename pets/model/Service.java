@@ -19,6 +19,13 @@ public class Service {
     public Pets currentPetList() {
         return this.curPetList;
     }
+    // public int maxId() {
+    //     int maxId = 0;
+    //     for (Animal animal : curPetList) {
+    //         if (animal.getIdAnim() > maxId) maxId = animal.getIdAnim();
+    //     }
+    //     return maxId;
+    // }
     public void putToFile(Animal anim) {
         curPetList.add(anim);
         try (FileWriter writer = new FileWriter(path, true)) {
@@ -43,13 +50,13 @@ public class Service {
                 String typeAnim = reader.readLine();
                 String nameAmin = reader.readLine();
                 String yearBirthAmin = reader.readLine();
-                reader.readLine();
+                String ageAnim = reader.readLine();
                 if (typeAnim.equals("DOGS")) this.curPetList.add(new Animal(Integer.parseInt(idAnim), nameAmin, 
-                    Integer.parseInt(yearBirthAmin), TypeAnim.Dogs));
+                    Integer.parseInt(yearBirthAmin), Integer.parseInt(ageAnim), TypeAnim.Dogs));
                     else if (typeAnim.equals("CATS")) this.curPetList.add(new Animal(Integer.parseInt(idAnim), nameAmin, 
-                        Integer.parseInt(yearBirthAmin), TypeAnim.Cats));
+                        Integer.parseInt(yearBirthAmin), Integer.parseInt(ageAnim), TypeAnim.Cats));
                         else this.curPetList.add(new Animal(Integer.parseInt(idAnim), nameAmin, Integer.parseInt(yearBirthAmin), 
-                            TypeAnim.Hamsters));
+                            Integer.parseInt(ageAnim), TypeAnim.Hamsters));
                 idAnim = reader.readLine();
             }
             reader.close();

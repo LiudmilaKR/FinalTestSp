@@ -21,7 +21,8 @@ public class Presenter {
     }
     public void addAnimal() {
         String name = view.getNameAnimal();
-        Animal newAnim = new Animal(10, name, view.getYearBirthAnimal(), view.getTypeAnim());
+        
+        Animal newAnim = new Animal(name, view.getYearBirthAnimal(), view.getTypeAnim());
         service.currentPetList().add(newAnim);
         service.putToFile(newAnim);
         view.addAnimal(name);

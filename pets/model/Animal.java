@@ -8,8 +8,20 @@ public class Animal {
     private int ageAnim;
     private TypeAnim typeAnim;
 
-    public Animal(int idAnim, String nameAnim, int yearBirthdayAnim, TypeAnim typeAnim) {
+    public Animal(int idAnim, String nameAnim, int yearBirthdayAnim, int ageAnim, TypeAnim typeAnim) {
         this.idAnim = idAnim;
+        this.nameAnim = nameAnim;
+        this.yearBirthdayAnim = yearBirthdayAnim;
+        this.ageAnim = ageAnim;
+        this.typeAnim = typeAnim;
+    }
+    public Animal(String nameAnim, int yearBirthdayAnim, TypeAnim typeAnim) {
+        // Counter count = new Counter();
+        Counter count = new Counter();
+        count.getNumber();
+        count.addCount();
+        idAnim = count.getNumber();
+        // this.idAnim = idAnim;
         this.nameAnim = nameAnim;
         this.yearBirthdayAnim = yearBirthdayAnim;
         this.typeAnim = typeAnim;

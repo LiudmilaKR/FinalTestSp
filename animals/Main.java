@@ -3,7 +3,7 @@ package animals;
 import animals.model.HumanFriends;
 import animals.model.pets.Dogs;
 // import animals.presenter.Presenter;
-import animals.view.App;
+// import animals.view.App;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,6 +15,6 @@ public class Main {
         
         // Presenter presenter = new Presenter("Buffer.out");
         // presenter.start();
-        App.buttonClick();
+        // App.buttonClick();
     }
 }
