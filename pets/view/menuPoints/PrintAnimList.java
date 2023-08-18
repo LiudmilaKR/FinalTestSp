@@ -10,6 +10,6 @@ public class PrintAnimList implements MenuPoint {
     }
     @Override
     public String toString() {
-        return "PrintAnimList";
+        return "Печать реестра животных";
     }
 }

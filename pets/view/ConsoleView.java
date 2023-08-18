@@ -2,23 +2,17 @@ package pets.view;
 
 import java.util.Scanner;
 
+import pets.model.Pets;
 import pets.model.TypeAnim;
-
-// import animals.model.HumanFriends;
-// import animals.model.pets.Dogs;
 
 public class ConsoleView implements View {
     private Scanner scan;
-    // private Menu menu;
-    // private boolean work;
+    
     /**
      * конструктор ConsoleView
      */
     public ConsoleView() {
         scan = new Scanner(System.in, "Cp866");
-        // menu = new Menu();
-        // this.menu = menu;
-        // work = false;
     }
     /**
      * метод оповещения начала работы программы
@@ -36,33 +30,13 @@ public class ConsoleView implements View {
         System.out.println();
         System.out.println("Завершение работы программы.");
     }
-    // @Override
-    // public void launchMenu() {
-    //     work = true;
-    //     int point = 0;
-    //     while (work) {
-    //         System.out.println(menu);
-    //         point = scan.nextInt();
-    //         if (point < 1 || point > (menu.getMenuSize() + 1)) {
-    //             System.out.println("Выбор некорректен. Попробуйте ещё раз!");
-    //         } else {    
-            
-    //             if (point == (menu.getMenuSize() + 1)) {
-    //                 exit();
-    //                 work = false;
-    //             } 
-    //             else menu.perform(point, this);
-    //         }
-    //     }
-    // }
     public void exit() {
         System.out.println("Выходим...");
-        // scan.close();
-        // work = false;
     }
     @Override
-    public void printAnimList() {
+    public void printAnimList(Pets pets) {
         System.out.println("Печатаем лист животных");
+        System.out.println(pets);
         System.out.println();
     }
     @Override

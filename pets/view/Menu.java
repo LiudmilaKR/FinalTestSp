@@ -10,22 +10,17 @@ import pets.view.menuPoints.PrintAnimList;
 
 public class Menu {
     private List<MenuPoint> menuList;
-    // private MenuPoin menu;
 
     public Menu() {
         menuList = new ArrayList<>();
         menuList.add(new PrintAnimList());
         menuList.add(new AddAnimal());
-        // comandList.add(new ShowTree());
-        // comandList.add(new AddToTree());
-        // comandList.add(new DelFromTree());
     }
     public int getMenuSize() {
         return menuList.size();
     }
     public void perform(int num, Presenter presenter) {
         MenuPoint menu = menuList.get(num - 1);
-        // System.out.println(menu);
         menu.execute(presenter);
     }
     @Override
