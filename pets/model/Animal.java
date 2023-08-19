@@ -17,20 +17,29 @@ public class Animal {
         this.typeAnim = typeAnim;
         ageAnim = Year.now().getValue() - yearBirthdayAnim;
     }
-    public String toDo() {
-        if (typeAnim == TypeAnim.Dogs) return "сидеть, лежать, голос!";
-        else if (typeAnim == TypeAnim.Cats) return "кис-кис, иди сюда, голос!";
-            else if (typeAnim == TypeAnim.Hamsters) return "прыгать, бежать, голос!";
-                else return null;
+    public String commands() {
+        ComAnim comanda = new ComAnim();
+        if (typeAnim == TypeAnim.Dogs) {
+            comanda.addAnimalCommand("Сидеть!");
+            comanda.addAnimalCommand("Лежать!");
+            comanda.addAnimalCommand("Голос!");
+        } else if (typeAnim == TypeAnim.Cats) {
+            comanda.addAnimalCommand("Кис-кис!");
+            comanda.addAnimalCommand("Иди сюда!");
+            } else if (typeAnim == TypeAnim.Hamsters) {
+                comanda.addAnimalCommand("Прыгать!");
+                comanda.addAnimalCommand("Бежать!");
+            }
+        return comanda.toString();
     }
     @Override
     public String toString() {
         if (typeAnim == TypeAnim.Dogs) return "Домашнее животное собака по кличке " + nameAnim + " [id=" + 
-            idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "] выполняет команды: " + toDo();
+            idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "] выполняет команды: " + commands();
         else if (typeAnim == TypeAnim.Cats) return "Домашнее животное кошка по кличке " + nameAnim + " [id=" + 
-            idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "] выполняет команды: " + toDo();
+            idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "] выполняет команды: " + commands();
             else if (typeAnim == TypeAnim.Hamsters) return "Домашнее животное хомячок по кличке " + nameAnim + " [id=" + 
-                idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "] выполняет команды: " + toDo();
+                idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "] выполняет команды: " + commands();
                 else return null;
     }
     public int getIdAnim() {

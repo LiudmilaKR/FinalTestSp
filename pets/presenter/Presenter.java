@@ -24,13 +24,16 @@ public class Presenter {
     public void addAnimal() {
         if (service.currentPetList().isEmpty()) service.takeFromFile();
         String name = view.getNameAnimal();
-        Counter count = new Counter();
-        count.setNumber(service.currentPetList().lastId());
-        count.getNumber();
-        count.addCount();
-        Animal newAnim = new Animal(count.getNumber(), name, view.getYearBirthAnimal(), view.getTypeAnim());
-        service.currentPetList().add(newAnim);
-        service.putToFile(newAnim);
-        view.addAnimal(newAnim);
+        try (Counter count = new Counter()) {
+            count.setNumber(service.currentPetList().lastId());
+            count.getNumber();
+            count.addCount();
+            Animal newAnim = new Animal(count.getNumber(), name, view.getYearBirthAnimal(), view.getTypeAnim());
+            service.currentPetList().add(newAnim);
+            service.putToFile(newAnim);
+            view.addAnimal(newAnim);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
