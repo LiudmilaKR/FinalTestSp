@@ -11,7 +11,6 @@ public class ComAnim {
     }
     public void addAnimalCommand(String com) {
         commandList.add(com);
-    
     }
     @Override
     public String toString() {
