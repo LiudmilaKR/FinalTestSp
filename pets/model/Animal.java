@@ -1,5 +1,7 @@
 package pets.model;
 
+import java.time.Year;
+
 public class Animal {
     // конкретное животное
     private int idAnim;
@@ -8,24 +10,12 @@ public class Animal {
     private int ageAnim;
     private TypeAnim typeAnim;
 
-    public Animal(int idAnim, String nameAnim, int yearBirthdayAnim, int ageAnim, TypeAnim typeAnim) {
+    public Animal(int idAnim, String nameAnim, int yearBirthdayAnim, TypeAnim typeAnim) {
         this.idAnim = idAnim;
         this.nameAnim = nameAnim;
         this.yearBirthdayAnim = yearBirthdayAnim;
-        this.ageAnim = ageAnim;
         this.typeAnim = typeAnim;
-    }
-    public Animal(String nameAnim, int yearBirthdayAnim, TypeAnim typeAnim) {
-        // Counter count = new Counter();
-        Counter count = new Counter();
-        count.getNumber();
-        count.addCount();
-        idAnim = count.getNumber();
-        // this.idAnim = idAnim;
-        this.nameAnim = nameAnim;
-        this.yearBirthdayAnim = yearBirthdayAnim;
-        this.typeAnim = typeAnim;
-        ageAnim = 2023 - yearBirthdayAnim;
+        ageAnim = Year.now().getValue() - yearBirthdayAnim;
     }
     public String toDo() {
         if (typeAnim == TypeAnim.Dogs) return "сидеть, лежать, голос!";
@@ -36,11 +26,11 @@ public class Animal {
     @Override
     public String toString() {
         if (typeAnim == TypeAnim.Dogs) return "Домашнее животное собака по кличке " + nameAnim + " [id=" + 
-            idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "]\n\tвыполняет команды: " + toDo();
+            idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "] выполняет команды: " + toDo();
         else if (typeAnim == TypeAnim.Cats) return "Домашнее животное кошка по кличке " + nameAnim + " [id=" + 
-            idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "]\n\tвыполняет команды: " + toDo();
+            idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "] выполняет команды: " + toDo();
             else if (typeAnim == TypeAnim.Hamsters) return "Домашнее животное хомячок по кличке " + nameAnim + " [id=" + 
-                idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "]\n\tвыполняет команды: " + toDo();
+                idAnim + ", yearBirthdayAnim=" + yearBirthdayAnim + ", ageAnim=" + ageAnim + "] выполняет команды: " + toDo();
                 else return null;
     }
     public int getIdAnim() {

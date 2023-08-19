@@ -2,29 +2,21 @@ package pets.view;
 
 import java.util.Scanner;
 
+import pets.model.Animal;
 import pets.model.Pets;
 import pets.model.TypeAnim;
 
 public class ConsoleView implements View {
     private Scanner scan;
     
-    /**
-     * конструктор ConsoleView
-     */
     public ConsoleView() {
         scan = new Scanner(System.in, "Cp866");
     }
-    /**
-     * метод оповещения начала работы программы
-     */
     @Override
     public void start() {
         System.out.println();
         System.out.println("Начало работы программы.");
     }
-    /**
-     * метод оповещения завершения работы программы
-     */
     @Override
     public void end() {
         System.out.println();
@@ -36,13 +28,15 @@ public class ConsoleView implements View {
     @Override
     public void printAnimList(Pets pets) {
         System.out.println("Печатаем лист животных");
-        System.out.println(pets);
+        for (Animal item : pets) {
+            System.out.println(item);
+        }
         System.out.println();
     }
     @Override
-    public void addAnimal(String name) {
-        System.out.printf("Животное по кличке %s добавлено.", name);
-        System.out.println();
+    public void addAnimal(Animal anim) {
+        System.out.printf("Животное %s добавлено.", anim);
+        System.out.println("\n");
     }
     @Override
     public String getNameAnimal() {

@@ -9,23 +9,14 @@ import java.io.IOException;
 public class Service {
     private Pets curPetList;
     private String path;
-    // private int currInd;
 
     public Service(String path) {
         this.path = path;
-        // currInd = 0;
         curPetList = new Pets();
     }
     public Pets currentPetList() {
         return this.curPetList;
     }
-    // public int maxId() {
-    //     int maxId = 0;
-    //     for (Animal animal : curPetList) {
-    //         if (animal.getIdAnim() > maxId) maxId = animal.getIdAnim();
-    //     }
-    //     return maxId;
-    // }
     public void putToFile(Animal anim) {
         curPetList.add(anim);
         try (FileWriter writer = new FileWriter(path, true)) {
@@ -50,13 +41,13 @@ public class Service {
                 String typeAnim = reader.readLine();
                 String nameAmin = reader.readLine();
                 String yearBirthAmin = reader.readLine();
-                String ageAnim = reader.readLine();
+                reader.readLine();
                 if (typeAnim.equals("DOGS")) this.curPetList.add(new Animal(Integer.parseInt(idAnim), nameAmin, 
-                    Integer.parseInt(yearBirthAmin), Integer.parseInt(ageAnim), TypeAnim.Dogs));
+                    Integer.parseInt(yearBirthAmin), TypeAnim.Dogs));
                     else if (typeAnim.equals("CATS")) this.curPetList.add(new Animal(Integer.parseInt(idAnim), nameAmin, 
-                        Integer.parseInt(yearBirthAmin), Integer.parseInt(ageAnim), TypeAnim.Cats));
+                        Integer.parseInt(yearBirthAmin), TypeAnim.Cats));
                         else this.curPetList.add(new Animal(Integer.parseInt(idAnim), nameAmin, Integer.parseInt(yearBirthAmin), 
-                            Integer.parseInt(ageAnim), TypeAnim.Hamsters));
+                            TypeAnim.Hamsters));
                 idAnim = reader.readLine();
             }
             reader.close();

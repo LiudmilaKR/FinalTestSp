@@ -12,7 +12,6 @@ public class App {
         veiw = new ConsoleView();
         presenter = new Presenter(veiw, "data.db");
     }
-
     public void buttonClick() {
         System.out.print("\033[H\033[J");
         Menu menu = new Menu();
